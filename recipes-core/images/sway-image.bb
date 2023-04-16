@@ -79,26 +79,17 @@ WCONSOLE_TOOLS ?= " \
 "
 
 WSYSTEM_CONF ?= " \
+	adw-gtk3 \
 	ca-certificates \
 	cups-filters \
 	cups-pk-helper \
-	glibc-binary-localedata-cs-cz \
-	glibc-binary-localedata-de-de \
-	glibc-binary-localedata-en-us \
-	glibc-binary-localedata-es-es \
-	glibc-binary-localedata-fr-fr \
-	glibc-binary-localedata-pl-pl \
-	glibc-binary-localedata-ru-ru \
-	glibc-charmap-utf-8 \
 	gtk4-printbackend-cups \
 	gtk4-printbackend-file \
 	libcanberra-pulse \
 	linux-firmware \
-	localedef \
 	nfs-export-public \
-	nordic-darker-theme \
 	packagegroup-fonts-truetype \
-	pulseaudio-user-service \
+	polkit-gnome \
 	resize-helper \
 	shared-mime-info \
 	shared-mime-info-data \
@@ -115,7 +106,6 @@ WSYSTEM_CONF ?= " \
 	wireless-regdb-static \
 	xdg-user-dirs \
 	xdg-desktop-portal \
-	xfce-polkit \
 	xkeyboard-config \
 	xorg-minimal-fonts \
 	xwayland \	
@@ -143,6 +133,7 @@ WSERVICES ?= " \
 	rpcbind \
 	rtkit \
 	samba \
+	samba-base \
 	upower \
 "
 
@@ -151,11 +142,24 @@ WCOMMERCIAL ?= " \
 	wf-recorder \
 "
 
+WGLIBC ?= " \
+	glibc-binary-localedata-cs-cz \
+	glibc-binary-localedata-de-de \
+	glibc-binary-localedata-en-us \
+	glibc-binary-localedata-es-es \
+	glibc-binary-localedata-fr-fr \
+	glibc-binary-localedata-pl-pl \
+	glibc-binary-localedata-ru-ru \
+	glibc-charmap-utf-8 \
+	localedef \
+"
+
 IMAGE_INSTALL += " \
 	${WWINDOW_MANAGER} \
 	${WGUI_APPS} \
 	${WCONSOLE_TOOLS} \
 	${WSYSTEM_CONF} \
 	${WSERVICES} \
+	${@bb.utils.contains('TCLIBC', 'glibc', '${WGLIBC}', '', d)} \
 	${@bb.utils.contains('LICENSE_FLAGS_ACCEPTED', 'commercial', '${WCOMMERCIAL}', '', d)} \
 "
