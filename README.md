@@ -60,6 +60,8 @@ Currently it depends on the following layers:
   meta-openembedded/meta-filesystems
   meta-openembedded/meta-xfce
   meta-wayland
+  meta-image
+  meta-sway-image
 ```
 
 Depending on your machine eventually additional machine specific layers are reuqired.
