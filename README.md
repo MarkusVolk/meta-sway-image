@@ -59,6 +59,7 @@ Currently it depends on the following layers:
   meta-openembedded/meta-python
   meta-openembedded/meta-filesystems
   meta-openembedded/meta-xfce
+  meta-clang
   meta-wayland
   meta-image
   meta-sway-image
