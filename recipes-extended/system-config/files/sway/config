@@ -58,7 +58,10 @@ bindsym $mod+Shift+q kill
 bindsym $mod+d exec $menu -i
 
 # screenshot
-bindsym $mod+Shift+c exec grim -g "$(slurp)" - | swappy -f -
+bindsym $mod+Shift+p exec grim -g "$(slurp)" - | swappy -f -
+
+# colorpicker
+bindsym $mod+Shift+c exec hyprpicker -a
 
 # mouse shit
 focus_follows_mouse no
