@@ -10,8 +10,3 @@ require recipes-core/images/wlroots.inc
 WWINDOW_MANAGER ?= "sway"
 WWINDOW_MANAGER:rpi ?= "sway-1.8"
 
-
-WSYSTEM_CONF:append = " \
-	polkit-gnome \
-"
-
