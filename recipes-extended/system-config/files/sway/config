@@ -164,8 +164,8 @@ bindsym $mod+Shift+0 move container to workspace $ws10
 exec dbus-update-activation-environment --systemd WAYLAND_DISPLAY XDG_CURRENT_DESKTOP=sway
 
 # Not Always
-exec ~/.azotebg
-exec waybar
+exec /usr/bin/waypaper --restore
+exec /usr/bin/waybar
 exec /usr/bin/autotiling-rs
 exec /usr/bin/blueman-applet
 exec /usr/bin/inactive-windows-transparency.py
